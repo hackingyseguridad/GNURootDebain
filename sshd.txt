@@ -15,6 +15,7 @@ nano /etc/ssh/sshd_config
 Port 22 to 2222
 UsePrivilegeSeperation no
 PermitRootLogin yes
+UsePAM no
 
 service ssh restart
 
