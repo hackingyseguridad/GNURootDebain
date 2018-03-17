@@ -1,0 +1,25 @@
+# GNURoot Debian Jessie Android SSH Server 
+# Google Play Store: https://play.google.com/store/apps/details?id=com.gnuroot.debian
+# Github: https://github.com/corbinlc/GNURootDebian
+
+# change root password
+passwd
+
+apt update
+apt install -y nano
+
+# openssh-server
+apt install -y openssh-server
+nano /etc/ssh/sshd_config
+
+Port 22 to 2222
+UsePrivilegeSeperation no
+PermitRootLogin yes
+
+service ssh restart
+
+# dropbear
+apt install -y dropbear
+nano /etc/default/dropbear DROPBEAR_PORT=22 to 2222
+
+service dropbear restart
